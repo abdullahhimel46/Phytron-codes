@@ -1,0 +1,47 @@
+/*
+       'a' - 'a' = 0
+       'b' - 'a' = 1
+       'c' - 'a' = 2
+    =>s[i] - 'a' = idx
+    so,  i + 'a' = 97 = a
+*/
+
+#include <stdio.h>
+int main()
+{
+    int t;
+    int space = 0;
+    scanf("%d", &t); 
+    
+    int freq[26] = {0};
+    getchar(); // getchar() is used to consume a whitespace
+    
+    while(t--) {
+        char s[50];
+     
+    fgets(s, 50, stdin);
+
+        for(int i = 0; s[i] != '\0'; i++){
+            int idx = s[i] - 'a';
+            freq[idx]++;
+
+        if(s[i] == ' ')
+            space++;
+        }
+    }
+
+    for(int i=0; i< 26; i++){
+        if(freq[i] != 0)
+            printf("%c -> %d\n",i + 'a' , freq[i]);
+    }
+ 
+    printf("spaces: %d",space);
+    return 0;
+}
+
+/*
+Sample Input:
+2
+abcd efg
+abcd h
+*/
