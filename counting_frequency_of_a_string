@@ -1,0 +1,29 @@
+/*
+       'a' - 'a' = 0
+       'b' - 'a' = 1
+       'c' - 'a' = 2
+    =>s[i] - 'a' = idx
+    so,  i + 'a' = 97 = a
+*/
+
+#include <stdio.h>
+int main()
+{
+    char s[50];
+    printf("enter string: ");
+    scanf("%s", s); 
+    
+    int freq[26] = {0};
+
+    for(int i = 0; s[i] != '\0'; i++) {
+        int idx = s[i] - 'a';
+        freq[idx]++;
+    }
+
+    for(int i=0; i< 26; i++){
+        if(freq[i] != 0)
+            printf("%c -> %d\n",i + 'a' , freq[i]);
+    }
+ 
+    return 0;
+}
