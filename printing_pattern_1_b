@@ -1,0 +1,23 @@
+/* targeted pattern: n=3
+line=1, 1 2 3 //kaj=3
+line=2, 1 2   //kaj=2
+line=3, 1     //kaj=1
+              =>kaj=kaj-1
+*/
+#include <stdio.h>
+int main()
+{
+    int n,kaj=3;
+    scanf("%d",&n);
+    while(n--){
+        //printing numbers
+        for(int i=1; i<=kaj; i++){
+            printf("%d ",i);
+        }
+        printf("\n"); 
+        //line sesh
+        kaj--;
+
+    }
+    return 0;
+}
