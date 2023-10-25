@@ -1,0 +1,27 @@
+/*
+*** Tips to print any type of pattern ***
+step-1: determine the number of lines -> n
+step-2: kaj -> printing patterns and a new line
+step-3: kaj++
+
+*/
+
+#include <stdio.h>
+int main()
+{
+    int n,kaj=1;
+    scanf("%d",&n);
+
+    //for (int i=0; i<n; i++) = while(n--)
+    while(n--){
+        //kaj
+        for(int i=0; i<kaj; i++){
+            printf("* ");
+        }
+        printf("\n");
+
+        kaj++;
+        
+    }
+    return 0;
+}
