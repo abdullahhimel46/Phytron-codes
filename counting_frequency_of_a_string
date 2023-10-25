@@ -3,7 +3,7 @@
        'b' - 'a' = 1
        'c' - 'a' = 2
     =>s[i] - 'a' = idx
-    so,  i + 'a' = 97 = a
+    so,  i + 'a' = (%d)97 = (%c)a
 */
 
 #include <stdio.h>
@@ -12,17 +12,20 @@ int main()
     char s[50];
     printf("enter string: ");
     scanf("%s", s); 
-    
-    int freq[26] = {0};
 
+// as total number of alphabets=26
+    int freq[26] = {0}; // setting all index of frequencies to 0
+
+// reading the string until the null character, so condition: s[i] != '\0'
     for(int i = 0; s[i] != '\0'; i++) {
-        int idx = s[i] - 'a';
+        int idx = s[i] - 'a'; // converting the value of the index to integer
         freq[idx]++;
     }
 
+// printing frequency, so condition: i < highest index of frequency
     for(int i=0; i< 26; i++){
         if(freq[i] != 0)
-            printf("%c -> %d\n",i + 'a' , freq[i]);
+            printf("%c -> %d\n", i + 'a' , freq[i]);
     }
  
     return 0;
