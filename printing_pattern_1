@@ -1,10 +1,16 @@
 /*
-*** Tips to print any type of pattern ***
+*** Tips to print pattern having no spaces in the left ***
 step-1: determine the number of lines -> n
 step-2: kaj -> printing patterns and a new line
 step-3: kaj++
-
 */
+
+/* targeted pattern: n = 3
+line=1,    * //kaj=1
+line=2,    * * //kaj=2=1+1
+line=3,    * * * //kaj=3=2+1
+                => kaj++(sesh line er por)
+*/              
 
 #include <stdio.h>
 int main()
@@ -19,7 +25,7 @@ int main()
             printf("* ");
         }
         printf("\n");
-
+        //line sesh
         kaj++;
         
     }
