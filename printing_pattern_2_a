@@ -1,0 +1,29 @@
+/* targeted pattern: n=3
+line=1,s=0, * * * * * //kaj=5
+line=2,s=1,   * * * //kaj=3
+line=3,s=2,     * //kaj=1
+              =>kaj=kaj-2
+*/
+#include <stdio.h>
+int main()
+{
+    int n,kaj=5,s=0;
+    scanf("%d",&n);
+    while(n--){
+    //toatl kaj= printing space + printing star
+        //printing spaces
+        for(int i=1; i<=s; i++){
+            printf(" ");
+        }
+        //printing stars
+        for(int i=1; i<=kaj; i++){
+            printf("*");
+        }
+        printf("\n"); 
+        //line sesh
+        kaj-=2;
+        s++;
+
+    }
+    return 0;
+}
