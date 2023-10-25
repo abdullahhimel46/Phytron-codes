@@ -1,0 +1,32 @@
+/* n=3
+    * //s=2,kaj=1
+  * * * //s=1,kaj=3=1+2
+* * * * *  //s=0,kaj=5=3+2
+space,s=n-1 && s--,kaj=kaj+2
+*/
+
+#include <stdio.h>
+int main()
+{
+    int n,s,kaj=1;
+    scanf("%d",&n);
+    s = n-1;
+
+    while(n--){
+    //toatl kaj= printing space + printing star
+        //printing spaces
+        for(int i=0;i<s;i++){
+            printf(" ");
+        }
+        //printing star
+        for(int i=0; i<kaj; i++){
+            printf("*");
+        }
+        printf("\n");
+        //line sesh
+        s--;
+        kaj+=2;
+
+    }
+    return 0;
+}
