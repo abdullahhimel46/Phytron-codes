@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main(){
+int n;
+    printf("Enter the size of the square: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            if (i == 1 || j == 1|| i == n  || j == n)
+            //printing star in the first row or first column or last row or last column
+            {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+/*
+Expected output:
+5
+*****
+*   *
+*   *
+*   *
+*****
+Hints: To create a hollow appearance, the outer boundary of the square is formed by asterisks/stars, 
+and the interior of the square is left empty.
+So, in this code we need  to print spaces in between the outer boundary of the square. In other words, we should 
+print star in the first row or first column or last row or last column!
+*/
