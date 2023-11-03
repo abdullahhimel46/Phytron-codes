@@ -1,0 +1,66 @@
+/*
+This code checks whether a given matrix is a diagonal square matrix.
+If it's square and all non-diagonal elements are zero, it's considered 
+as a primary diagonal matrix, and the code prints "Primary diagonal." 
+If any of these conditions are not met, it prints "Not diagonal."
+*/
+/*
+Set, flag=1,//let, the matrix is square & diagonal
+Step 1: Check the matrix is square or not
+Step 2: Check the matrix is diagonal or not
+        a)skip diagonal elements and continue(move to next iteration)
+        b)check non-diagonal elements
+Step 3: If still flag==1; then, it's a diagonal square matrix. So, print diagonal
+        else, print not diagonal. Because any of these conditions are not met
+*/
+
+#include <stdio.h>
+int main()
+{
+    int row,col;
+    printf("Enter number of row and column: ");
+    scanf("%d%d",&row,&col);
+    int a[row][col];
+
+    for(int i = 0; i < row; i++){
+        for(int j =0; j< col; j++){
+            scanf("%d", &a[i][j]);
+         // scanf("%d", &a[i]); => for 1D
+        }
+    }
+    
+    int flag = 1; //let, the matrix is diagonal & square
+
+//Step 1:
+    //check if the matrix is square or not
+    if( row != col){
+   /*If the number of rows and columns are not equal,
+    set 'flag' to 0 (means,matrix isn't square)*/
+        flag = 0; //the matrix isn't square
+    }
+
+    //Step 2:
+//diagonal = elements where the row and column indices are the same
+    //check if the matrix is diagonal or not
+    for(int i = 0; i < row; i++){
+        for(int j =0; j< col; j++){
+        //check the diagonal elements 
+        if(i == j) // If the indices are the same,
+            continue; // move to next iteration (skip these elements)
+        //N.B: diagonal elements are usually allowed to be zero!
+        
+        //check other elements (non-diagonal elements)
+        if(a[i][j] != 0)
+            flag = 0; //matrix isn't diagonal
+        } 
+    }
+
+//Step 3:
+    if( flag == 1 )
+        printf("Primany diagonal\n");
+    else
+        printf("Not diagonal\n");
+
+
+    return 0;
+}
