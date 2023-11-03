@@ -1,14 +1,21 @@
+/*
+A scalar matrix is a square matrix in which all diagonal elements are equal,
+and all non-diagonal elements are zero.
+N.B: square matrix = mat[n][n];
+*/
+
 #include <stdio.h>
 int main()
 {
-    int row,col;
-    printf("Enter number of row and column: ");
-    scanf("%d%d",&row,&col);
-    // Declare a 2D array
-    int a[row][col]; 
+    int n;
+    printf("Enter n: ");
+    scanf("%d",&n);
 
-    for(int i = 0; i < row; i++){
-        for(int j =0; j< col; j++){
+    // Declare a 2D array
+    int a[n][n]; 
+
+    for(int i = 0; i < n; i++){
+        for(int j =0; j< n; j++){
             scanf("%d", &a[i][j]);
          // scanf("%d", &a[i]); => for 1D
         }
@@ -16,34 +23,25 @@ int main()
     
     int flag = 1; //assuming it's a scalar matrix
 
-//Step 1:
-    //check if the matrix is square or not
-    if( row != col){
-   /*If the number of rows and columns are not equal,
-    set 'flag' to 0 (means,matrix isn't square)*/
-        flag = 0; //the matrix isn't square
-    }
 
-    //Step 2:
-//diagonal = elements where the row and column indices are the same
-    //check if the matrix is diagonal or not
-    for(int i = 0; i < row; i++){
-        for(int j =0; j< col; j++){
-        //check the diagonal elements 
-        if(i == j) // Check if the current element is on the main diagonal
+//Step 2:
+    for(int i = 0; i < n; i++){
+        for(int j =0; j< n; j++){
+//Step-2(a): check the diagonal elements are equal 
+        if(i == j ) // Check if the current element is on the main diagonal
         {
             if(a[i][j] != a[0][0]) // Check if current element is equal to the first element on the main diagonal
                 flag = 0;
         }
         
-        //check other elements (non-diagonal elements)
+//Step-2(b):check other elements(non-diagonal elements) are zero or not
         else if (a[i][j] != 0)  // Check if the current non-diagonal element is not zero.
-            flag = 0; //matrix isn't diagonal
+            flag = 0; //it's not a scalar matrix.
         } 
     }
 
 //Step 3:
-    if( flag == 1 )
+    if( flag )
         printf("Scelar matrix\n");
     else
         printf("Not Scelar\n");
