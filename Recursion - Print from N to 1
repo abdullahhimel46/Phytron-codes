@@ -1,0 +1,19 @@
+#include <stdio.h>
+void fun(int n){
+    //base case
+    if(n<=0)return;
+
+    if (n == 1) {
+        printf("%d", n); // Print without a space after the last number
+    } else {
+        printf("%d ", n); // Print with a space for numbers other than the last one
+    }
+    fun(n - 1);
+}
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    fun(n);
+    return 0;
+}
