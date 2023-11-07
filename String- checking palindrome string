@@ -1,0 +1,27 @@
+//Two pointers method
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char a[1001];
+    scanf("%s",&a);
+    int flag = 1; //let,the string is a palindrome
+
+    int i = 0; //i=the index of the first character in the string
+    int j= strlen(a)-1; //j=the index of the last character in the string
+    while(i < j){
+        if(a[i] != a[j])//characters at positions 'i' and 'j' are not equal.
+        {
+            flag = 0;//the string is not a palindrome.
+        }
+
+        i++;//move to next character from beginning of the string.
+        j--;//move to next character from end of the string.
+    }
+
+    if(flag == 0)
+        printf("NO");
+    else
+        printf("YES");
+    return 0;
+}
