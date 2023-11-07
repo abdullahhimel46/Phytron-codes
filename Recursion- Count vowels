@@ -1,0 +1,44 @@
+#include <stdio.h>
+int countVowels(char *s, int i){
+    //base case
+    if(s[i] == '\0') 
+        return 0; //terminate the recursion!
+
+    char c = s[i];
+
+    // convert to lower case
+    if(c>='A' && c<='Z'){
+        c += 32; 
+    }
+
+    // Check if the character is a vowel
+    int isVowel = 0;
+    switch (c)
+    {
+    case 'a':
+    case 'e':
+    case 'o':
+    case 'i':
+    case 'u':
+        isVowel++;
+        break;
+    }
+    
+// Recursive call
+    return countVowels(s, i+1) + isVowel;
+    
+
+}
+int main()
+{
+    char s[205];
+    fgets(s, 205, stdin);
+    
+    int cnt = countVowels(s,0);
+    printf("%d ", cnt);
+    
+    return 0;
+}
+    
+    
+    
