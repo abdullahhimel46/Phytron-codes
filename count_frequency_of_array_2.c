@@ -1,4 +1,4 @@
-// count frequency of an array when the input size is unknown!
+// count frequency of all the elements of an array when the input size is unknown!
 /*
 Step 1: find the maximum size of the array
 Step 2: initialize freq[max+i] = {0};
