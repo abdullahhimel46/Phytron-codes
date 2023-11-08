@@ -1,0 +1,36 @@
+//Counting frequency of a smallest element in an array
+/*
+
+*/
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    int a[n];
+    for(int i = 0; i < n; i++){
+        scanf("%d", &a[i]);
+    }
+
+    //Let, assume that the first element is the minimum
+    int min = a[0]; //initial assumption
+    int min_freq = 1;//we found the minimum once (the initial assumption)
+
+//iterating from i = 1 (since we've already initialized min with the first element)
+    for(int i = 1; i < n; i++){
+        if(a[i]<min)// Checks if the i-th element of the array is less than the current min value
+        { 
+            min = a[i];//update min
+            min_freq = 1;//found a new min
+        }
+        else if(a[i] == min){
+            min_freq++;// count the frequency of the minimum value in the array
+        }
+    }
+
+    printf("%d -> %d\n", min, min_freq);
+
+    return 0;
+}
