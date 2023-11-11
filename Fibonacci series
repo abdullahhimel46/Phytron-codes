@@ -1,0 +1,43 @@
+/*
+                      (1+1) (2+3)
+                         |   |
+ Fibonacci series: 0 1 1 2 3 5 8 13
+                       |   |
+                    (0+1) (1+2)
+            first = 0;
+            second = 1;
+            fibo = first + second;
+              //fibo = 0 + 1 = 1; 
+              //fibo = 1 + 1 = 2; 
+              //fibo = 1 + 2 = 3;
+              //fibo = 2 + 3 = 5;
+            fibo = second+fibo= new_fibo;
+            so, first = second; 
+                second = fibo;
+*/
+
+#include <stdio.h>
+int main()
+{
+    int t;
+    printf("enter number of terms = ");
+    scanf("%d", &t);
+
+    // Initialize the first two terms of the series
+    int first = 0;
+    int second = 1;
+
+    // Display the generated Fibonacci sequence
+    printf("Fibonacci Series: %d %d ", first, second);
+
+    for (int i = 2; i < t; i++) {
+        int fibo = first + second;
+        printf("%d ", fibo);
+
+        // Update variables for the next iteration
+        first = second;
+        second = fibo;
+    }
+    
+    return 0;
+}
