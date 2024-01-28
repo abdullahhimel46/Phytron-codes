@@ -1,0 +1,40 @@
+//fibonacci series
+/*
+                       (1+1)
+                         |
+ Fibonacci series: 0 1 1 2 3 5 8 13
+                       |   |
+                    (0+1) (1+2)
+
+             Index: 0 1 2 3 4 5 6
+  Fibonacci series: 0 1 1 2 3 5 8
+            a[0] = 0;
+            a[1] = 1;
+           // 1  = 0 + 1;
+            a[2] = a[0] + a[1];
+           // 2  = 1 + 1;
+            a[3] = a[1] + a[2];
+                 = a[3-2]+a[3-1];
+          =>a[i] = a[i-2]+a[i-1];
+*/
+#include <stdio.h>
+int fibo(int n)
+{
+    // base case
+    if (n <= 1)
+        return n; // return 0 or 1
+    else
+        return fibo(n - 1) + fibo(n - 2);
+    //     (n - 1st)+    (n - 2nd)
+}
+int main()
+{
+    int n;
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", fibo(i));
+    }
+    return 0;
+}
