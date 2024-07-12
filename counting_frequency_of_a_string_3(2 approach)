@@ -1,3 +1,45 @@
+//easier approach
+/*
+Sample input
+1
+abcd h
+Sample output
+" " aparece 1 time(s)
+a aparece 1 time(s)
+b aparece 1 time(s)
+c aparece 1 time(s)
+d aparece 1 time(s)
+h aparece 1 time(s)
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int t; cin>>t;
+    cin.ignore();
+    while(t--){
+        
+    string s; getline(cin,s);
+    map<char,int> freq;
+    
+    for(int i=0; i<s.size(); i++){
+        freq[s[i]]++;
+    }
+    
+    for(auto k: freq){
+        if(k.first == ' ')
+        cout<<"\" \" aparece "<<k.second<<" time(s)"<<"\n";
+        else
+        cout<<k.first<<" aparece "<<k.second<<" time(s)"<<"\n";
+    }
+    }
+    return 0; 
+}
+
+//naive approach
 /*
        'a' - 'a' = 0
        'b' - 'a' = 1
