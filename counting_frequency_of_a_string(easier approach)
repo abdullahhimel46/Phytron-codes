@@ -1,4 +1,4 @@
-//counting_frequency_of_a_string
+// counting_frequency_of_a_string
 /*
 Sample input
 abdullah
@@ -13,19 +13,40 @@ u aparece 1 time(s)
 
 #include <bits/stdc++.h>
 using namespace std;
-int main(){
+int main()
+{
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    string s; cin>>s;
-    map<char,int> freq;
-    
-    for(int i=0; i<s.size(); i++){
-        freq[s[i]]++;
+    string s;
+    cin >> s;
+    map<char, int> freq;
+
+    // //general approach
+    // for (int i = 0; i < s.size(); i++)
+    // {
+    //     freq[s[i]]++;
+    // }
+
+    // range based loop
+    for (char c : s)
+    {
+        freq[c]++;
     }
-    
-    for(auto k: freq){
-        cout<<k.first<<" aparece "<<k.second<<" time(s)"<<"\n";
+
+    // general approach
+    for (char i = 'a'; i <= 'z'; i++)
+    {
+        if (freq[i] > 0)
+        {
+            cout << i << " aparece " << freq[i] << " time(s)" << endl;
+        }
     }
-    return 0; 
+
+    // //short cut
+    // for (auto k : freq)
+    // {
+    //     cout << k.first << " aparece " << k.second << " time(s)" << "\n";
+    // }
+    return 0;
 }
